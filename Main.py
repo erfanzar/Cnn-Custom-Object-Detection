@@ -15,6 +15,8 @@ from torch.nn import Conv2d , Linear , Dropout2d , BatchNorm2d , MaxPool2d , L1L
 import time
 from torch.nn import Sequential
 from .common import PredictionNeurons , NeuronBlock , BConvBlock, ResidualBlock,ScalePrediction,ConvBlock
+from .config import *
+
 
 class MultiLayerCreator(nn.Module):
 
