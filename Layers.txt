@@ -1,471 +1,119 @@
-ModuleList(
-  (0): CNN(
-    (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (batch): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (1): CNN(
-    (conv): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2))
-    (batch): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (2): Residual(
-    (layers): ModuleList(
-      (0): Sequential(
-        (0): CNN(
-          (conv): Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-    )
-  )
-  (3): CNN(
-    (conv): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2))
-    (batch): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (4): Residual(
-    (layers): ModuleList(
-      (0): Sequential(
-        (0): CNN(
-          (conv): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (1): Sequential(
-        (0): CNN(
-          (conv): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-    )
-  )
-  (5): CNN(
-    (conv): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2))
-    (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (6): Residual(
-    (layers): ModuleList(
-      (0): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (1): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (2): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (3): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (4): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (5): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (6): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (7): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-    )
-  )
-  (7): CNN(
-    (conv): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(2, 2))
-    (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (8): Residual(
-    (layers): ModuleList(
-      (0): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (1): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (2): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (3): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (4): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (5): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (6): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (7): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-    )
-  )
-  (9): Residual(
-    (layers): ModuleList(
-      (0): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (1): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (2): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-      (3): Sequential(
-        (0): CNN(
-          (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-          (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-      )
-    )
-  )
-  (10): CNN(
-    (conv): Conv2d(512, 512, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
-    (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (11): Sequential(
-    (0): Residual(
-      (layers): ModuleList(
-        (0): Sequential(
-          (0): CNN(
-            (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-            (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-            (activation): SiLU()
-          )
-          (1): CNN(
-            (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-            (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-            (activation): SiLU()
-          )
-        )
-      )
-    )
-    (1): CNN(
-      (conv): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
-      (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (activation): SiLU()
-    )
-    (2): ScalePrediction(
-      (pred): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 21, kernel_size=(1, 1), stride=(1, 1), bias=False)
-          (batch): BatchNorm2d(21, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): Identity()
-        )
-      )
-    )
-  )
-  (12): CNN(
-    (conv): Conv2d(256, 256, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
-    (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (13): Upsample(scale_factor=2.0, mode=nearest)
-  (14): CNN(
-    (conv): Conv2d(768, 256, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
-    (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (15): CNN(
-    (conv): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (16): Sequential(
-    (0): Residual(
-      (layers): ModuleList(
-        (0): Sequential(
-          (0): CNN(
-            (conv): Conv2d(512, 1024, kernel_size=(1, 1), stride=(1, 1))
-            (batch): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-            (activation): SiLU()
-          )
-          (1): CNN(
-            (conv): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-            (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-            (activation): SiLU()
-          )
-        )
-      )
-    )
-    (1): CNN(
-      (conv): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
-      (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (activation): SiLU()
-    )
-    (2): ScalePrediction(
-      (pred): Sequential(
-        (0): CNN(
-          (conv): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(512, 21, kernel_size=(1, 1), stride=(1, 1), bias=False)
-          (batch): BatchNorm2d(21, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): Identity()
-        )
-      )
-    )
-  )
-  (17): CNN(
-    (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
-    (batch): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (18): Upsample(scale_factor=2.0, mode=nearest)
-  (19): CNN(
-    (conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1), padding=(1, 1))
-    (batch): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (20): CNN(
-    (conv): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (activation): SiLU()
-  )
-  (21): Sequential(
-    (0): Residual(
-      (layers): ModuleList(
-        (0): Sequential(
-          (0): CNN(
-            (conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
-            (batch): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-            (activation): SiLU()
-          )
-          (1): CNN(
-            (conv): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-            (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-            (activation): SiLU()
-          )
-        )
-      )
-    )
-    (1): CNN(
-      (conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
-      (batch): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (activation): SiLU()
-    )
-    (2): ScalePrediction(
-      (pred): Sequential(
-        (0): CNN(
-          (conv): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-          (batch): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): SiLU()
-        )
-        (1): CNN(
-          (conv): Conv2d(256, 21, kernel_size=(1, 1), stride=(1, 1), bias=False)
-          (batch): BatchNorm2d(21, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-          (activation): Identity()
-        )
-      )
-    )
-  )
-)
+-----------------------------------------------------------------
+
+[INFO] befor the predict : torch.Size([2, 3, 416, 416])
+[INFO] Layer is runing on 0 index
+[INFO] Layer Information : in channels : 3
+[INFO] after the predict : torch.Size([2, 32, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 32, 416, 416])
+[INFO] Layer is runing on 1 index
+[INFO] Layer Information : in channels : 32
+[INFO] after the predict : torch.Size([2, 64, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 64, 416, 416])
+[INFO] Layer is runing on 2 index
+[INFO] Layer Information : in channels : 64
+[INFO] after the predict : torch.Size([2, 64, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 64, 416, 416])
+[INFO] Layer is runing on 3 index
+[INFO] Layer Information : in channels : 64
+[INFO] after the predict : torch.Size([2, 128, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 128, 416, 416])
+[INFO] Layer is runing on 4 index
+[INFO] Layer Information : in channels : 128
+[INFO] after the predict : torch.Size([2, 128, 416, 416])
+-------------
+[INFO] Repeats ON this Layer : 2
+[INFO] Running On ResidualBlock Layer
+[INFO] Finished On ResidualBlock Layer in 0.0 Sec
+[INFO] befor the predict : torch.Size([2, 128, 416, 416])
+[INFO] Layer is runing on 5 index
+[INFO] Layer Information : in channels : 128
+[INFO] after the predict : torch.Size([2, 256, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 256, 416, 416])
+[INFO] Layer is runing on 6 index
+[INFO] Layer Information : in channels : 256
+[INFO] after the predict : torch.Size([2, 256, 416, 416])
+-------------
+[INFO] Repeats ON this Layer : 2
+[INFO] Running On ResidualBlock Layer
+[INFO] Finished On ResidualBlock Layer in 0.0 Sec
+[INFO] befor the predict : torch.Size([2, 256, 416, 416])
+[INFO] Layer is runing on 7 index
+[INFO] Layer Information : in channels : 256
+[INFO] after the predict : torch.Size([2, 128, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 128, 416, 416])
+[INFO] Layer is runing on 8 index
+[INFO] Layer Information : in channels : 128
+[INFO] after the predict : torch.Size([2, 128, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 128, 416, 416])
+[INFO] Layer is runing on 9 index
+[INFO] Layer Information : in channels : 128
+[INFO] after the predict : torch.Size([2, 64, 416, 416])
+-------------
+[INFO] Running On ScalePrediction Layer
+[INFO] being Reshape : torch.Size([2, 27, 13, 13])
+[INFO] after Reshape : torch.Size([2, 3, 9, 13, 13])
+[INFO] after permute : torch.Size([2, 3, 13, 13, 9])
+[INFO] Finished On ScalePrediction Layer in 0.024933338165283203 Sec
+[INFO] befor the predict : torch.Size([2, 64, 416, 416])
+[INFO] Layer is runing on 10 index
+[INFO] Layer Information : in channels : 64
+[INFO] after the predict : torch.Size([2, 32, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 32, 416, 416])
+[INFO] Layer is runing on 11 index
+[INFO] Upsample Layer Is Running
+[INFO] after the predict : torch.Size([2, 32, 416, 416])
+-------------
+[INFO] Running On Upsample Layer
+[INFO] Finished On Upsample Layer in 0.06582403182983398 Sec
+[INFO] befor the predict : torch.Size([2, 288, 416, 416])
+[INFO] Layer is runing on 12 index
+[INFO] Layer Information : in channels : 288
+[INFO] after the predict : torch.Size([2, 512, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 512, 416, 416])
+[INFO] Layer is runing on 13 index
+[INFO] Layer Information : in channels : 512
+[INFO] after the predict : torch.Size([2, 512, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 512, 416, 416])
+[INFO] Layer is runing on 14 index
+[INFO] Layer Information : in channels : 512
+[INFO] after the predict : torch.Size([2, 256, 416, 416])
+-------------
+[INFO] Running On ScalePrediction Layer
+[INFO] being Reshape : torch.Size([2, 27, 26, 26])
+[INFO] after Reshape : torch.Size([2, 3, 9, 26, 26])
+[INFO] after permute : torch.Size([2, 3, 26, 26, 9])
+[INFO] Finished On ScalePrediction Layer in 0.09873604774475098 Sec
+[INFO] befor the predict : torch.Size([2, 256, 416, 416])
+[INFO] Layer is runing on 15 index
+[INFO] Layer Information : in channels : 256
+[INFO] after the predict : torch.Size([2, 256, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 256, 416, 416])
+[INFO] Layer is runing on 16 index
+[INFO] Layer Information : in channels : 256
+[INFO] after the predict : torch.Size([2, 256, 416, 416])
+-------------
+[INFO] befor the predict : torch.Size([2, 256, 416, 416])
+[INFO] Layer is runing on 17 index
+[INFO] Layer Information : in channels : 256
+[INFO] after the predict : torch.Size([2, 128, 416, 416])
+-------------
+[INFO] Running On ScalePrediction Layer
+[INFO] being Reshape : torch.Size([2, 27, 52, 52])
+[INFO] after Reshape : torch.Size([2, 3, 9, 52, 52])
+[INFO] after permute : torch.Size([2, 3, 52, 52, 9])
+[INFO] Finished On ScalePrediction Layer in 0.07480049133300781 Sec
+torch.Size([2, 3, 13, 13, 9])
+torch.Size([2, 3, 26, 26, 9])
+torch.Size([2, 3, 52, 52, 9])
+
