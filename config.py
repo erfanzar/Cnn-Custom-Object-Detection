@@ -1,4 +1,4 @@
-device = ('cuda:0' if torch.cuda.is_available() else 'cpu')
+
 config = [
   [32,3,1],
   [64,3,1],

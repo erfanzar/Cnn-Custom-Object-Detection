@@ -1,15 +1,9 @@
 import torch.nn as nn
-import torch 
-import torch.optim as optim 
-import torchvision
-import torchvision.transforms as transforms
-import numpy as np
-import torch.nn.functional as F
-import matplotlib.pyplot as plt
-from torchvision import transforms
-from torch.nn import Conv2d , Linear , Dropout2d , BatchNorm2d , MaxPool2d , L1Loss , MSELoss , SiLU , Dropout , init , ReLU , CrossEntropyLoss ,Softmax , Upsample , LeakyReLU
-import time
+import torch
+from torch.nn import Conv2d, Linear, BatchNorm2d, SiLU, Dropout, ReLU, LeakyReLU
 from torch.nn import Sequential
+
+device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
 class PredictionNeurons(nn.Module):
   def __init__(self,num_in,num_classes , act=True):

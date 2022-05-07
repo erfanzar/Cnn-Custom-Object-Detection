@@ -1,27 +1,16 @@
-from torch.nn.modules.loss import L1Loss
-import torch 
+import torch
 import torch.nn as nn
-import torch.optim as optim 
-import torchvision
-import torchvision.transforms as transforms
-import numpy as np
-import torch.nn.functional as F
-import matplotlib.pyplot as plt
-from torchvision import transforms
-import pandas as pd
-from torchsummary import summary
-from torch.utils.data import Dataset , DataLoader
-from torch.nn import Conv2d , Linear , Dropout2d , BatchNorm2d , MaxPool2d , L1Loss , MSELoss , SiLU , Dropout , init , ReLU , CrossEntropyLoss ,Softmax , Upsample , LeakyReLU
 import time
-from torch.nn import Sequential
-from .common import PredictionNeurons , NeuronBlock , BConvBlock, ResidualBlock,ScalePrediction,ConvBlock
-from .config import *
+from common import PredictionNeurons, NeuronBlock, BConvBlock, ResidualBlock, ScalePrediction, ConvBlock
+from config import config, config_v2, config_v3
+
 
 
 class MultiLayerCreator(nn.Module):
+      
 
   def __init__ (self,config,resulution,num_classes,in_channel=3,information=False):
-    
+    self.device = ('cuda:0' if torch.cuda.is_available() else 'cpu')
     super(MultiLayerCreator,self).__init__()
     self.information=information
     self.resulotion = resulution
@@ -45,7 +34,7 @@ class MultiLayerCreator(nn.Module):
                     kernel_size=kernel,
                     padding=1 if kernel == 3 else 0,
                     stride=sp
-                    ).to(device)
+                    ).to(self.device)
 
         )
         self.in_channel = out_c
@@ -76,11 +65,11 @@ class MultiLayerCreator(nn.Module):
 
         if conf == "O":
           layers.append(
-              NeuronBlock(self.in_channel*84.5, self.num_classes,act=False).to(device)
+              NeuronBlock(self.in_channel*84.5, self.num_classes,act=False).to(self.device)
           )
         elif conf == "P":
           layers.append(
-              PredictionNeurons(self.in_channel*3, self.num_classes,act=False).to(device)
+              PredictionNeurons(self.in_channel*3, self.num_classes,act=False).to(self.device)
           )
         elif conf == "S":
 
@@ -116,7 +105,7 @@ class MultiLayerCreator(nn.Module):
           stp = time.time()
 
 
-        output.append((layer.forward(x).to(device)))
+        output.append((layer.forward(x).to(self.device)))
 
         if  self.information:
           # print(f'[INFO] Output From Scale Prediction : {x.shape}')
@@ -183,6 +172,8 @@ class MultiLayerCreator(nn.Module):
   
 
 if __name__ == '__main__':
+  
+  device = ('cuda:0' if torch.cuda.is_available() else 'cpu')
   
   model = MultiLayerCreator(config = config_v2,in_channel=3,num_classes=4,resulution=416,information=True)
   
