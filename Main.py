@@ -1,78 +1,20 @@
-
+from torch.nn.modules.loss import L1Loss
+import torch 
 import torch.nn as nn
+import torch.optim as optim 
+import torchvision
+import torchvision.transforms as transforms
+import numpy as np
+import torch.nn.functional as F
+import matplotlib.pyplot as plt
+from torchvision import transforms
+import pandas as pd
+from torchsummary import summary
+from torch.utils.data import Dataset , DataLoader
+from torch.nn import Conv2d , Linear , Dropout2d , BatchNorm2d , MaxPool2d , L1Loss , MSELoss , SiLU , Dropout , init , ReLU , CrossEntropyLoss ,Softmax , Upsample , LeakyReLU
+import time
+from torch.nn import Sequential
 
-import torch
-
-from layerCreator import layer_creator
-
-from common import CNN , Residual , ScalePrediction
-
-from autopad import *
-
-
-class Detector(nn.Module):
-
-    def __init__(self , numclass , in_c = 1):
-        
-        super().__init__()
-        
-        
-        
-        self.classes = numclass
-
-        self.in_c = in_c
-
-        self.fullylayer= layer_creator(3,2)
-
-    def forward(self , x):
-
-       
-
-        out = []
-
-        route_connections = []
-
-
-        for layer in self.fullylayer:
-
-
-            if isinstance(layer , ScalePrediction):
-
-                out.append(layer(x))
-
-                continue
-
-            x = layer(x)
-
-            if isinstance(layer , Residual) and layer.num_rep == 8 :
-
-                route_connections.append(x)
-
-            elif isinstance(layer , nn.Upsample):
-                
-                x = torch.cat([x,route_connections[-1]] , dim=1)
-
-                route_connections.pop()
-
-
-
-
-
-#### example
-
-if __name__ == "__main__":
-    model = Detector(2)
-    print(model.fullylayer)
-
-
-    ## for train 
-    
-    ##model.forward(input)
-
-    o = open('Layers.txt' , 'a')
-
-    with o as w :
-        w.write(str(model.fullylayer))
 
 
 # MIT License
